@@ -7,7 +7,7 @@ export const accountsController = {
     auth: false,
     handler: async function (request, h) {
       const url = await axios.get("http://169.254.169.254/latest/meta-data/local-hostname")
-      return h.view("main", { title: "Welcome to Playlist", ip: url });
+      return h.view("main", { title: "Welcome to Playlist", ip: url.data });
     },
   },
   showSignup: {
