@@ -73,7 +73,7 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variable files
-.env
+src/.env
 .env.development.local
 .env.test.local
 .env.production.local
@@ -125,3 +125,17 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+.eslintrc.json
+.prettierrc.json
+.env
+
+# IDE
+.idea
+src/models/firebase/firebaseConfig.js
+src/models/firebase/firebaseConfig.js
+/public/temp.img
+src/models/temp.img
+src/models/temp.img
+src/models/temp.img
+/controllertests/
+/controllertests/
