@@ -89,7 +89,7 @@ async function init() {
 
   server.auth.default("session");
 
-  db.init("fire");
+  db.init("mongo");
   server.route(webRoutes);
   server.route(apiRoutes);
   await server.start();
@@ -99,6 +99,8 @@ async function init() {
 process.on("unhandledRejection", (err) => {
   console.log(err);
   process.exit(1);
+
 });
+
 
 init();

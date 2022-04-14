@@ -1,11 +1,14 @@
 import mongoose from "mongoose";
 import { db } from "../models/db.js";
 import { userMongoStore } from "../models/mongo/user-mongo-store.js";
-import _ from "lodash"
+import _ from "lodash";
+import axios from "axios";
+
 
 export const dashboardController = {
   index: {
     handler: async function (request, h) {
+
       const loggedInUser = request.auth.credentials;
       let userId
       if( db.userStore === userMongoStore) {

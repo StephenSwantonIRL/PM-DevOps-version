@@ -1,11 +1,13 @@
+import axios from "axios";
 import { UserSpec, UserCredentialsSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
 
 export const accountsController = {
   index: {
     auth: false,
-    handler: function (request, h) {
-      return h.view("main", { title: "Welcome to Playlist" });
+    handler: async function (request, h) {
+      const url = await axios.get("http://169.254.169.254/latest/meta-data/local-hostname")
+      return h.view("main", { title: "Welcome to Playlist", ip: url });
     },
   },
   showSignup: {
